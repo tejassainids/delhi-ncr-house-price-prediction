@@ -1,211 +1,278 @@
-# 🏠 Delhi NCR House Price Prediction using Linear Regression
+# 🏠 Delhi NCR House Price Prediction
 
-A Machine Learning regression project that predicts residential property prices in the Delhi NCR region using **Linear Regression**. This project demonstrates the complete end-to-end Machine Learning workflow, from data exploration to model deployment-ready persistence.
+An end-to-end Machine Learning project that predicts residential property prices in the Delhi NCR region using multiple regression algorithms.
 
----
+The project demonstrates the complete ML workflow:
 
-## 📌 Project Overview
-
-The objective of this project is to estimate house prices using numerical property features and evaluate the performance of a Linear Regression model.
-
-The project covers:
-
-* Data preprocessing
-* Exploratory Data Analysis (EDA)
-* Data visualization
-* Feature selection
-* Model training
-* Model evaluation
-* Residual analysis
-* Saving the trained model
-* Predicting prices for new houses
+- Data Cleaning
+- Exploratory Data Analysis (EDA)
+- Data Visualization
+- Feature Selection
+- Linear Regression (Baseline Model)
+- Decision Tree Regression
+- Hyperparameter Tuning
+- Model Evaluation
+- User Prediction
+- Streamlit Frontend
 
 ---
 
-## 📂 Dataset
+# 📌 Dataset
 
 **Dataset:** Delhi NCR Housing Dataset 2025
 
-Source:
+**Source:**
 https://www.kaggle.com/datasets/aabhas2351/delhi-ncr-housing-dataset-2025
 
 **License:** CC0 1.0 (Public Domain)
 
 ---
 
-## 🎯 Features Used
+# 🎯 Features Used
 
-Input Features:
+### Input Features
 
-* Area (sq ft)
-* Number of Bedrooms (BHK)
-* Parking Spaces
+- Area (sq ft)
+- Number of Bedrooms (BHK)
+- Parking Spaces
 
-Target Variable:
+### Target Variable
 
-* House Price
-
----
-
-## 🛠️ Technologies Used
-
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
-* Scikit-learn
-* Joblib
+- House Price
 
 ---
 
-## 📊 Exploratory Data Analysis
+# 🛠 Technologies Used
 
-The following visualizations were created:
-
-* Correlation Heatmap
-* Area vs Price
-* BHK vs Price
-* Parking vs Price
-* Residual Plot
-* Actual vs Predicted Plot
-
----
-
-## 🤖 Machine Learning Pipeline
-
-1. Import Libraries
-2. Load Dataset
-3. Exploratory Data Analysis
-4. Correlation Analysis
-5. Feature Selection
-6. Train-Test Split
-7. Linear Regression Model Training
-8. House Price Prediction
-9. Model Evaluation
-10. Residual Analysis
-11. Save Model using Joblib
-12. User Input Prediction
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-Learn
+- Joblib
+- Streamlit
 
 ---
 
-## 📈 Model Evaluation
+# 📊 Exploratory Data Analysis
 
-The model was evaluated using:
+Performed extensive EDA using:
 
-* Mean Absolute Error (MAE)
-* Mean Squared Error (MSE)
-* Root Mean Squared Error (RMSE)
-* R² Score
-
-The project also includes residual analysis to understand model performance and prediction errors.
+- Correlation Heatmap
+- Area vs Price
+- BHK vs Price
+- Parking vs Price
 
 ---
 
-## 📁 Project Structure
+# 📷 EDA Visualizations
+
+## Correlation Heatmap
+
+![Correlation Heatmap](outputs/plots/correlation_heatmap.png)
+
+---
+
+## Area vs Price
+
+![Area vs Price](outputs/plots/area_vs_price.png)
+
+---
+
+## BHK vs Price
+
+![BHK vs Price](outputs/plots/bhk_vs_price.png)
+
+---
+
+## Parking vs Price
+
+![Parking vs Price](outputs/plots/parking_vs_price.png)
+
+---
+
+# 🤖 Machine Learning Models
+
+## 1️⃣ Linear Regression
+
+Used as the baseline regression model.
+
+### Evaluation Metrics
+
+- Mean Absolute Error (MAE)
+- Mean Squared Error (MSE)
+- Root Mean Squared Error (RMSE)
+- R² Score
+
+### Visualizations
+
+#### Actual vs Predicted
+
+![Actual vs Predicted LR](outputs/plots/actual_vs_predicted_lr.png)
+
+#### Residual Plot
+
+![Residual Plot LR](outputs/plots/residual_plot_lr.png)
+
+---
+
+## 2️⃣ Decision Tree Regression
+
+Implemented Decision Tree Regression to capture non-linear relationships in housing prices.
+
+### Hyperparameter Tuning
+
+Compared multiple tree depths and selected the best-performing model.
+
+Best parameter:
 
 ```text
-House_Price_Predictor/
+max_depth = 5
+```
+
+### Evaluation Metrics
+
+- MAE
+- RMSE
+- R² Score
+
+### Visualizations
+
+#### Actual vs Predicted
+
+![Actual vs Predicted DT](outputs/plots/actual_vs_predicted_dt.png)
+
+#### Residual Plot
+
+![Residual Plot DT](outputs/plots/residual_plot_dt.png)
+
+---
+
+# 🌐 Streamlit Frontend
+
+A simple interactive web application was built using Streamlit.
+
+Users can enter:
+
+- Area
+- BHK
+- Parking Spaces
+
+and instantly receive an estimated property price.
+
+## Home Page
+
+![Home](outputs/screenshots/home.png)
+
+---
+
+## Prediction Example
+
+![Prediction](outputs/screenshots/prediction.png)
+
+---
+
+## Another Prediction Example
+
+![Prediction 2](outputs/screenshots/prediction2.png)
+
+---
+
+# 📁 Project Structure
+
+```text
+Delhi NCR House Price Prediction/
+
+│
+├── app.py
+├── README.md
+├── LICENSE
+├── requirements.txt
 │
 ├── data/
 │
 ├── models/
-│   └── house_price_model.pkl
+│   ├── linear_regression_model.pkl
+│   └── decision_tree_model.pkl
 │
 ├── notebooks/
-│   └── house_price_predictor.ipynb
+│   ├── 01_EDA_Linear_Regression.ipynb
+│   └── 02_Decision_Tree.ipynb
 │
 ├── outputs/
-│   ├── actual_vs_predicted.png
-│   ├── area_vs_price.png
-│   ├── bhk_vs_price.png
-│   ├── correlation_heatmap.png
-│   ├── parking_vs_price.png
-│   ├── predictions.csv
-│   └── residual_plot.png
+│   ├── plots/
+│   ├── predictions/
+│   └── screenshots/
 │
-├── requirements.txt
-├── LICENSE
-└── README.md
+└── .gitignore
 ```
 
 ---
 
-## 📷 Project Visualizations
+# 🚀 How to Run
 
-### Correlation Heatmap
-
-![Correlation Heatmap](outputs/correlation_heatmap.png)
-
----
-
-### Area vs Price
-
-![Area vs Price](outputs/area_vs_price.png)
-
----
-
-### Actual vs Predicted Prices
-
-![Actual vs Predicted](outputs/actual_vs_predicted.png)
-
----
-
-### Residual Plot
-
-![Residual Plot](outputs/residual_plot.png)
-
----
-
-## 🚀 Installation
-
-Clone the repository:
+Clone the repository
 
 ```bash
 git clone https://github.com/tejassainids/delhi-ncr-house-price-prediction.git
 ```
 
-Install dependencies:
+Move into the project
+
+```bash
+cd delhi-ncr-house-price-prediction
+```
+
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the notebook to reproduce the complete workflow.
+Run the application
+
+```bash
+streamlit run app.py
+```
 
 ---
 
-## 💡 Future Improvements
+# 📚 Learning Outcomes
 
-* Add Location as a feature
-* Include Property Type
-* Include Property Age
-* Handle Outliers
-* Feature Engineering
-* Compare with:
+This project helped reinforce:
 
-  * Decision Tree Regression
-  * Random Forest Regression
-  * XGBoost
-
----
-
-## 📚 Learning Outcomes
-
-This project helped reinforce the following concepts:
-
-* Exploratory Data Analysis (EDA)
-* Data Visualization
-* Feature Selection
-* Train-Test Split
-* Linear Regression
-* MAE, MSE, RMSE and R²
-* Residual Analysis
-* Saving and Loading ML Models
-* End-to-End Machine Learning Workflow
+- Exploratory Data Analysis
+- Feature Selection
+- Linear Regression
+- Decision Tree Regression
+- Hyperparameter Tuning
+- MAE, MSE, RMSE and R²
+- Residual Analysis
+- Saving & Loading ML Models
+- Streamlit Deployment
+- Git & GitHub Workflow
 
 ---
 
-## 📜 License
+# 💡 Future Improvements
 
-This project is licensed under the MIT License.
+- Random Forest Regression
+- XGBoost
+- Feature Importance
+- Cross Validation
+- Model Comparison Dashboard
+- Cloud Deployment
+
+---
+
+# 👨‍💻 Author
+
+**Tejas Saini**
+
+B.Tech Data Science Student
+
+GitHub:
+https://github.com/tejassainids
+
+---

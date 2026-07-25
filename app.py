@@ -22,7 +22,7 @@ model = joblib.load("models/random_forest_model.pkl")
 st.title("🏠 Delhi NCR House Price Prediction")
 
 st.markdown("""
-Predict house prices in Delhi NCR using a **Decision Tree Regressor** trained on the Delhi NCR Housing Dataset 2025.
+Predict house prices in Delhi NCR using a **Forest Tree Regressor** trained on the Delhi NCR Housing Dataset 2025.
 """)
 
 st.divider()
@@ -89,5 +89,5 @@ if st.button("Predict Price"):
 st.divider()
 
 st.caption(
-    "Made by Tejas Saini | Machine Learning Project"
+    "Developed by Tejas Saini © 2026"
 )

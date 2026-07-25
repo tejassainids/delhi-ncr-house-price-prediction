@@ -272,20 +272,34 @@ streamlit run app.py
 
 ---
 
+## 🚀 Live Demo
+
+🌐 **Try the application here:**
+
+https://delhincrhousepriceprediction-tejas.streamlit.app
+
+---
+
 # 📚 Learning Outcomes
 
-This project helped reinforce:
+This project strengthened my understanding of:
 
-- Exploratory Data Analysis
-- Feature Selection
+- Data preprocessing and feature selection
+- Exploratory Data Analysis (EDA)
+- Data visualization using Matplotlib
+- Building regression models with:
 - Linear Regression
-- Decision Tree Regression
-- Hyperparameter Tuning
-- MAE, MSE, RMSE and R²
-- Residual Analysis
-- Saving & Loading ML Models
-- Streamlit Deployment
-- Git & GitHub Workflow
+- Decision Tree Regressor
+- Random Forest Regressor
+- Hyperparameter tuning (max_depth, n_estimators)
+- Model evaluation using MAE, RMSE, and R² Score
+- Residual analysis and Actual vs Predicted visualization
+- Comparing multiple models to select the best performer
+- Saving and loading trained models with Joblib
+- Building an interactive Streamlit web application
+- Deploying a Machine Learning model on Streamlit Community Cloud
+- Managing project versions with Git and GitHub
+- Developing an end-to-end Machine Learning workflow
 
 ---
 
@@ -308,5 +322,8 @@ B.Tech Data Science Student
 
 GitHub:
 https://github.com/tejassainids
+
+Live Demo:
+https://delhincrhousepriceprediction-tejas.streamlit.app
 
 ---

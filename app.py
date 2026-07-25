@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
 import joblib
 
 # -----------------------------
@@ -22,15 +23,28 @@ model = joblib.load("models/random_forest_model.pkl")
 st.title("🏠 Delhi NCR House Price Prediction")
 
 st.markdown("""
-Predict house prices in Delhi NCR using a **Forest Tree Regressor** trained on the Delhi NCR Housing Dataset 2025.
+Predict house prices in Delhi NCR using a **Random Forest Regressor** trained on the Delhi NCR Housing Dataset.
 """)
+
+st.divider()
+
+# -----------------------------
+# Model Performance
+# -----------------------------
+st.subheader("📊 Model Performance")
+
+m1, m2, m3 = st.columns(3)
+
+m1.metric("MAE", "₹1.04 Cr")
+m2.metric("RMSE", "₹2.30 Cr")
+m3.metric("R² Score", "0.69")
 
 st.divider()
 
 # -----------------------------
 # Inputs
 # -----------------------------
-st.subheader("Enter House Details")
+st.subheader("🏡 Enter House Details")
 
 col1, col2 = st.columns(2)
 
@@ -39,14 +53,16 @@ with col1:
         "Area (sq ft)",
         min_value=100,
         max_value=10000,
-        value=1600
+        value=1600,
+        help="Total carpet area in square feet."
     )
 
     bhk = st.number_input(
         "BHK",
         min_value=1,
         max_value=10,
-        value=3
+        value=3,
+        help="Number of bedrooms."
     )
 
 with col2:
@@ -54,7 +70,8 @@ with col2:
         "Parking Spaces",
         min_value=0,
         max_value=10,
-        value=2
+        value=2,
+        help="Number of parking spaces available."
     )
 
 st.divider()
@@ -62,7 +79,7 @@ st.divider()
 # -----------------------------
 # Prediction
 # -----------------------------
-if st.button("Predict Price"):
+if st.button("🔮 Predict Price", use_container_width=True):
 
     new_house = pd.DataFrame({
         "bhk": [bhk],
@@ -72,22 +89,77 @@ if st.button("Predict Price"):
 
     prediction = model.predict(new_house)[0]
 
-    st.success(f"🏡 Estimated Price: ₹ {prediction/1e7:.2f} Crore")
+    st.success(
+        f"💰 **Estimated Price:** ₹ {prediction/1e7:.2f} Crore"
+    )
 
     st.info(
         f"""
-        **Summary**
+### 📝 Prediction Summary
 
-        • Area : **{area} sq ft**
-
-        • BHK : **{bhk}**
-
-        • Parking : **{parking}**
-        """
+- **Area:** {area:,} sq ft
+- **BHK:** {bhk}
+- **Parking:** {parking}
+"""
     )
 
 st.divider()
 
-st.caption(
-    "Developed by Tejas Saini © 2026"
+# -----------------------------
+# Feature Importance
+# -----------------------------
+st.subheader("📈 Feature Importance")
+
+importance = pd.DataFrame({
+    "Feature": [
+        "Area",
+        "BHK",
+        "Parking"
+    ],
+    "Importance": model.feature_importances_
+})
+
+importance = importance.sort_values(
+    by="Importance",
+    ascending=False
 )
+
+importance = importance.set_index("Feature")
+
+st.bar_chart(importance)
+
+st.caption(
+    "Higher importance means the model relied more on that feature while making predictions."
+)
+
+st.divider()
+
+# -----------------------------
+# Sidebar
+# -----------------------------
+with st.sidebar:
+
+    st.header("📌 Project Information")
+
+    st.markdown("""
+**Model Used**
+- Random Forest Regressor
+
+**Dataset**
+- Delhi NCR Housing Dataset
+
+**Features**
+- Area (sq ft)
+- BHK
+- Parking
+
+**Author**
+- Tejas Saini
+""")
+
+# -----------------------------
+# Footer
+# -----------------------------
+st.divider()
+
+st.caption("© 2026 Tejas Saini • Data Science Portfolio")

@@ -14,7 +14,7 @@ st.set_page_config(
 # -----------------------------
 # Load Model
 # -----------------------------
-model = joblib.load("models/decision_tree_model.pkl")
+model = joblib.load("models/random_forest_model.pkl")
 
 # -----------------------------
 # Title

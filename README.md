@@ -100,10 +100,9 @@ Used as the baseline regression model.
 
 ### Evaluation Metrics
 
-- Mean Absolute Error (MAE)
-- Mean Squared Error (MSE)
-- Root Mean Squared Error (RMSE)
-- R² Score
+- Mean Absolute Error (MAE): ₹1.72 Cr
+- Root Mean Squared Error (RMSE): 3.06 Cr
+- R² Score: 0.459
 
 ### Visualizations
 
@@ -133,9 +132,9 @@ max_depth = 5
 
 ### Evaluation Metrics
 
-- MAE
-- RMSE
-- R² Score
+- MAE: ₹1.10 Cr
+- RMSE: ₹2.36 Cr
+- R² Score: 0.677
 
 ### Visualizations
 
@@ -146,6 +145,39 @@ max_depth = 5
 #### Residual Plot
 
 ![Residual Plot DT](outputs/plots/residual_plot_dt.png)
+
+---
+
+## 3️⃣ Random Forest Regression
+
+Implemented Random Forest Regression to capture non-linear relationships in housing prices.
+
+### Hyperparameter Tuning
+
+Compared multiple depths, n_estimators and selected the best-performing model.
+
+Best parameter:
+
+```text
+max_depth = 7
+n_estimators=200
+```
+
+### Evaluation Metrics
+
+- MAE: ₹1.05 Cr
+- RMSE: ₹2.30 Cr
+- R² Score: 0.695 
+
+### Visualizations
+
+#### Actual vs Predicted
+
+![Actual vs Predicted DT](outputs/plots/actual_vs_predicted_rf.png)
+
+#### Residual Plot
+
+![Residual Plot DT](outputs/plots/residual_plot_rf.png)
 
 ---
 

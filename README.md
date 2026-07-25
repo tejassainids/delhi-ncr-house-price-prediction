@@ -227,10 +227,12 @@ Delhi NCR House Price Prediction/
 ├── models/
 │   ├── linear_regression_model.pkl
 │   └── decision_tree_model.pkl
+│   └── random_forest_model.pkl
 │
 ├── notebooks/
 │   ├── 01_EDA_Linear_Regression.ipynb
 │   └── 02_Decision_Tree.ipynb
+│   └── 03_Random_Forest.ipynb
 │
 ├── outputs/
 │   ├── plots/

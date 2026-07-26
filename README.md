@@ -173,11 +173,45 @@ n_estimators=200
 
 #### Actual vs Predicted
 
-![Actual vs Predicted DT](outputs/plots/actual_vs_predicted_rf.png)
+![Actual vs Predicted RF](outputs/plots/actual_vs_predicted_rf.png)
 
 #### Residual Plot
 
-![Residual Plot DT](outputs/plots/residual_plot_rf.png)
+![Residual Plot RF](outputs/plots/residual_plot_rf.png)
+
+---
+
+## 4️⃣ Polynomial Regression
+
+Implemented Polynomial Regression to capture non-linear relationships by creating polynomial features while still using Linear Regression as the learning algorithm.
+
+### Hyperparameter Tuning
+
+Compared multiple polynomial degrees and selected the best-performing model.
+
+Best parameter:
+
+```text
+Degree = 2
+```
+
+### Evaluation Metrics
+
+- MAE: ₹1.30 Cr
+- RMSE: ₹2.42 Cr
+- R² Score: 0.66
+
+### Visualizations
+
+#### Polynomial Degree vs RMSE
+
+![Polynomial Degree vs RMSE Plot](outputs/plots/polydegree_vs_rmse.png)
+
+### Key Learning
+
+- Polynomial Regression creates new polynomial features (e.g., Area², Area × BHK) before training.
+- Degree 2 improved performance over Linear Regression.
+- Higher degrees (3–5) caused overfitting and reduced accuracy.
 
 ---
 
@@ -228,11 +262,13 @@ Delhi NCR House Price Prediction/
 │   ├── linear_regression_model.pkl
 │   └── decision_tree_model.pkl
 │   └── random_forest_model.pkl
+│   └── polynomial_regression_model.pkl
 │
 ├── notebooks/
 │   ├── 01_EDA_Linear_Regression.ipynb
 │   └── 02_Decision_Tree.ipynb
 │   └── 03_Random_Forest.ipynb
+│   └── 04_Polynomial_Regression.ipynb
 │
 ├── outputs/
 │   ├── plots/

@@ -35,7 +35,7 @@ st.subheader("📊 Model Performance")
 
 m1, m2, m3 = st.columns(3)
 
-m1.metric("MAE", "₹1.04 Cr")
+m1.metric("MAE", "₹1.05 Cr")
 m2.metric("RMSE", "₹2.30 Cr")
 m3.metric("R² Score", "0.69")
 

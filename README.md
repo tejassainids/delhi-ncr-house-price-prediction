@@ -215,6 +215,29 @@ Degree = 2
 
 ---
 
+## 5️⃣ Ridge + Poly Regression
+
+Implemented  Ridge Regularization with Polynomial Regression to capture non-linear relationships while controlling model complexity and reducing overfitting.
+
+### Hyperparameter Tuning
+
+Compared different alpha values for ridge model & multiple polynomial degrees for polynomial model and selected the best-performing model.
+
+Best parameter:
+
+```text
+Alpha = 1.0
+Degree = 2
+```
+
+### Evaluation Metrics
+
+- MAE: ₹1.24 Cr
+- RMSE: ₹2..38 Cr
+- R² Score: 0.67
+
+---
+
 # 🌐 Streamlit Frontend
 
 A simple interactive web application was built using Streamlit.
@@ -269,6 +292,7 @@ Delhi NCR House Price Prediction/
 │   └── 02_Decision_Tree.ipynb
 │   └── 03_Random_Forest.ipynb
 │   └── 04_Polynomial_Regression.ipynb
+│   └── 05_Ridge_Regression.ipynb
 │
 ├── outputs/
 │   ├── plots/

@@ -215,7 +215,28 @@ Degree = 2
 
 ---
 
-## 6️⃣ Lasso + Poly Regression
+## 5️⃣ Ridge + Polynomial Regression
+
+Implemented Ridge Regularization with Polynomial Regression to capture non-linear relationships while controlling model complexity and reducing overfitting.
+
+### Hyperparameter Tuning
+
+Compared different alpha values for Ridge and multiple polynomial degrees to select the best-performing model.
+
+Best parameters:
+
+Alpha = 1.0
+Degree = 2
+
+### Evaluation Metrics
+
+- MAE: ₹1.24 Cr
+- RMSE: ₹2.38 Cr
+- R² Score: 0.67
+
+---
+
+## 6️⃣ Lasso + Polynomial Regression
 
 Implemented Lasso Regression with Polynomial Features using L1 regularization to control model complexity and perform feature selection by shrinking coefficients toward zero.
 
@@ -233,6 +254,28 @@ Degree = 2
 - MAE: ₹1.55 Cr
 - RMSE: ₹2.81 Cr
 - R² Score: 0.67
+
+---
+
+## 7️⃣ Elastic Net Regression
+
+Implemented Elastic Net Regression with Polynomial Features, combining L1 and L2 regularization to control model complexity and reduce overfitting.
+
+### Hyperparameter Tuning
+
+Compared different alpha values and l1_ratio values to find the best-performing configuration.
+
+Best parameters:
+
+Alpha = 1.0
+L1 Ratio = 0.25
+Degree = 2
+
+### Evaluation Metrics
+
+- MAE: ₹1.60 Cr
+- RMSE: ₹2.89 Cr
+- R² Score: 0.52
 
 ---
 

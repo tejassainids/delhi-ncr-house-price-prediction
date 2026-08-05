@@ -79,7 +79,7 @@ st.divider()
 # -----------------------------
 # Prediction
 # -----------------------------
-if st.button("🔮 Predict Price", use_container_width=True):
+if st.button("💵 Predict Price", use_container_width=True):
 
     new_house = pd.DataFrame({
         "bhk": [bhk],

@@ -215,25 +215,23 @@ Degree = 2
 
 ---
 
-## 5️⃣ Ridge + Poly Regression
+## 6️⃣ Lasso + Poly Regression
 
-Implemented  Ridge Regularization with Polynomial Regression to capture non-linear relationships while controlling model complexity and reducing overfitting.
+Implemented Lasso Regression with Polynomial Features using L1 regularization to control model complexity and perform feature selection by shrinking coefficients toward zero.
 
 ### Hyperparameter Tuning
 
-Compared different alpha values for ridge model & multiple polynomial degrees for polynomial model and selected the best-performing model.
+Compared different alpha values for the Lasso model and selected the best-performing model.
 
 Best parameter:
 
-```text
-Alpha = 1.0
+Alpha = 10,000,000
 Degree = 2
-```
 
 ### Evaluation Metrics
 
-- MAE: ₹1.24 Cr
-- RMSE: ₹2..38 Cr
+- MAE: ₹1.55 Cr
+- RMSE: ₹2.81 Cr
 - R² Score: 0.67
 
 ---
